@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Natillera", "Natillera\Natillera.csproj", "{2EC0DA6D-CBB8-4E36-B0B6-6BA2B9F756F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EC0DA6D-CBB8-4E36-B0B6-6BA2B9F756F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EC0DA6D-CBB8-4E36-B0B6-6BA2B9F756F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EC0DA6D-CBB8-4E36-B0B6-6BA2B9F756F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EC0DA6D-CBB8-4E36-B0B6-6BA2B9F756F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3864540E-E34A-4D21-82DB-51963F98786E}
+	EndGlobalSection
+EndGlobal
