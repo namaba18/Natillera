@@ -169,6 +169,8 @@
     <Content Include="Pages\Scripts\Comunes\Tablas.js" />
     <Content Include="Pages\Scripts\Abonos.js" />
     <Content Include="Pages\Scripts\Creditos.js" />
+    <Content Include="Pages\Liquidacion.html" />
+    <Content Include="Pages\Scripts\Liquidacion.js" />
     <Content Include="Pages\Scripts\Usuarios.js" />
     <Content Include="Pages\Usuarios.html" />
     <Content Include="Content\bootstrap.rtl.min.css.map" />

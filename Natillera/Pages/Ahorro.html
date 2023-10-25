@@ -32,7 +32,13 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label for="txtId">ID</label>
+                                                    <input type="number" class="form-control" id="txtId" placeholder="Id">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label for="txtMonto">MONTO</label>
                                                     <input type="number" class="form-control" id="txtMonto" placeholder="Monto a pagar">
@@ -47,7 +53,7 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="dtFechaEstimada">FECHA ESTIMADA</label>
-                                                    <input type="date" class="form-control" id="dtFechaEstimada" >
+                                                    <input type="date" class="form-control" id="dtFechaEstimada">
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -69,7 +75,7 @@
                                             <div class="col-md-3">
                                                 <br />
                                                 <button type="button" id="btnEliminar" class="btn-block btn-lg btn-primary">ELIMINAR</button>
-                                            </div>
+                                            </div>  
                                             <div class="col-md-3">
                                                 <br />
                                                 <button type="button" id="btnConsultar" class="btn-block btn-lg btn-primary">CONSULTAR</button>
@@ -77,13 +83,15 @@
                                         </div>
                                         <div class="row mt-2">
                                             <div class="col-md-12">
-                                                <table id="tblUsuarios" class="table table-bordered table-striped" style="width:100%;">
+                                                <table id="tblAhorros" class="table table-bordered table-striped" style="width:100%;">
                                                     <thead>
                                                         <tr>
+                                                            <th>Id</th>
                                                             <th>Monto</th>
                                                             <th>Fecha de Pago</th>
                                                             <th>Fecha Límite</th>
-                                                            <th>Nombre Usuario</th>
+                                                            <th>Nombre </th>
+                                                            <th>Apellido </th>
                                                         </tr>
                                                     </thead>
                                                 </table>

@@ -1,6 +1,18 @@
 ﻿var oTabla = $("#tblProductos").DataTable();
 jQuery(function () {
     $("#dvMenu").load("../Pages/Menu.html")
+    $("#btnInsertar").on("click", function () {
+        EjecutarComandos("POST");
+    });
+    $("#btnActualizar").on("click", function () {
+        EjecutarComandos("PUT");
+    });
+    $("#btnEliminar").on("click", function () {
+        EjecutarComandos("DELETE");
+    });
+    $("#btnConsultar").on("click", function () {
+        Consultar();
+    });
     LlenarComboTipoUsuario();
     LlenarComboTipoDocumento();
     LlenarComboPais();
@@ -53,4 +65,75 @@ async function LlenarComboBarrio() {
 
 async function LlenarTablaUsuarios() {
     LlenarTablaXServicios("https://localhost:44342/api/Usuario", "#tblUsuarios")
+}
+
+async function EjecutarComandos(Comando) {
+    event.preventDefault();
+    let Nombre = $("#txtNombre").val();
+    let Apellido = $("#txtApellido").val();
+    let Documento = $("#txtDocumento").val();
+    let TipoDocumentoId = $("#cboTipoDoc").val();
+    let TipoUsuarioId = $("#cboTipoUsuario").val();
+    let Activo = $("#cbActivo").val();
+    let Barrio = $("#cboBarrio").val();
+    let Direccion = $("#txtDireccion").val();
+      
+
+    DatosUsuario = {
+        Nombre: Nombre,
+        Apellido: Apellido,
+        Documento: Documento,
+        TipoDocumentoId: TipoDocumentoId,
+        TipoUsuarioId: TipoUsuarioId,
+        Activo: Activo,
+        BarrioId: Barrio,
+        Direccion: Direccion,
+    }
+    try {
+        const Respuesta = await fetch("https://localhost:44342/api/Usuario",
+            {
+                method: Comando,
+                mode: "cors",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(DatosUsuario)
+            });
+        const Rpta = await Respuesta.json();
+        $("#dvMensaje").html(Rpta);
+    }
+    catch (error) {
+        $("#dvMensaje").html(error);
+    }
+}
+
+async function Consultar() {
+    event.preventDefault();
+    let Documento = $("#txtDocumento").val();
+
+    try {
+        const Respuesta = await fetch("https://localhost:44342/api/Usuario?Documento=" + Documento,
+            {
+                method: "GET",
+                mode: "cors",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+        const Rpta = await Respuesta.json();
+
+        $("#txtNombre").val(Rpta.Nombre);
+        $("#txtApellido").val(Rpta.Apellido);
+        $("#txtDocumento").val(Rpta.Documento);
+        $("#cboTipoDoc").val(Rpta.TipoDocumentoId);
+        $("#cboTipoUsuario").val(Rpta.TipoUsuarioId);
+        if (Rpta.Activo == true) {
+            $("#cbActivo").prop("checked", true);
+        }
+        $("#cboBarrio").val(Rpta.BarrioId);
+        $("#txtDireccion").val(Rpta.Direccion);
+    }
+    catch (error) {
+        $("#dvMensaje").html(error);
+    }
 }
