@@ -101,6 +101,7 @@ async function EjecutarComandos(Comando) {
             });
         const Rpta = await Respuesta.json();
         $("#dvMensaje").html(Rpta);
+        LlenarTablaUsuarios();
     }
     catch (error) {
         $("#dvMensaje").html(error);

@@ -54,6 +54,7 @@ async function EjecutarComandos(Comando) {
             });
         const Rpta = await Respuesta.json();
         $("#dvMensaje").html(Rpta);
+        LlenarTablaAhorros();
     }
     catch (error) {
         $("#dvMensaje").html(error);
