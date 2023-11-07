@@ -32,36 +32,37 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-1">
-                                                <div class="form-group">
-                                                    <label for="dtFecha">FECHA</label>
-                                                    <input type="number" class="form-control" id="dtFecha" placeholder="Id">
-                                                </div>
-                                            </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label for="txtMonto">MONTO</label>
-                                                    <input type="number" class="form-control" id="txtMonto" placeholder="Monto a pagar">
+                                                    <label for="dtFecha">FECHA</label>
+                                                    <input type="date" class="form-control" id="dtFecha" placeholder="Id">
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="dtCuotas">COUTAS</label>
-                                                    <input type="date" class="form-control" id="dtCuotas">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="dtFechaEstimada">FECHA ESTIMADA</label>
-                                                    <input type="date" class="form-control" id="dtFechaEstimada">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="cboUsuarios">USUARIO</label>
                                                     <select class="form-control" id="cboUsuarios"></select>
                                                 </div>
                                             </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="txtMonto">MONTO</label>
+                                                    <input type="number" class="form-control" id="txtMonto" placeholder="Monto a pagar">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label for="txtCuotas">COUTAS</label>
+                                                    <input type="number" class="form-control" id="txtCuotas">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label for="txtInteres">INTERÉS</label>
+                                                    <input type="number" class="form-control" id="txtInteres">
+                                                </div>
+                                            </div>
+
                                         </div>
                                         <div class="row">
                                             <div class="col-md-3">
@@ -83,15 +84,14 @@
                                         </div>
                                         <div class="row mt-2">
                                             <div class="col-md-12">
-                                                <table id="tblAhorros" class="table table-bordered table-striped" style="width:100%;">
+                                                <table id="tblCreditos" class="table table-bordered table-striped" style="width:100%;">
                                                     <thead>
                                                         <tr>
-                                                            <th>Id</th>
+                                                            <th>Fecha</th>
+                                                            <th>Usuario</th>
                                                             <th>Monto</th>
-                                                            <th>Fecha de Pago</th>
-                                                            <th>Fecha Límite</th>
-                                                            <th>Nombre </th>
-                                                            <th>Apellido </th>
+                                                            <th>Cuotas</th>
+                                                            <th>Interés </th>
                                                         </tr>
                                                     </thead>
                                                 </table>
@@ -118,6 +118,6 @@
     <script src="Scripts/Comunes/Tablas.js"></script>
     <script src="Scripts/Comunes/Combos.js"></script>
     <!--Archivos de la página-->
-    <script src="Scripts/Ahorro.js"></script>
+    <script src="Scripts/Creditos.js"></script>
 </body>
 </html>

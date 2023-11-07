@@ -13,12 +13,21 @@ jQuery(function () {
     $("#btnConsultar").on("click", function () {
         Consultar();
     });
+    $("#cboPais").on("change", function () {
+        let pais = document.getElementById("cboPais");
+        LlenarComboDepartamento(pais.value);
+    });
+    $("#cboDepartamento").on("change", function () {
+        let departamento = document.getElementById("cboDepartamento");
+        LlenarComboCiudad(departamento.value);
+    });
+    $("#cboCiudad").on("change", function () {
+        let ciudad = document.getElementById("cboCiudad");
+        LlenarComboBarrio(ciudad.value);
+    });
     LlenarComboTipoUsuario();
     LlenarComboTipoDocumento();
     LlenarComboPais();
-    LlenarComboDepartamento();
-    LlenarComboCiudad();
-    LlenarComboBarrio();
     LlenarTablaUsuarios();
 });
 //TODO: Filtrar los combos
@@ -44,20 +53,20 @@ async function LlenarComboPais() {
     }
 }
 
-async function LlenarComboDepartamento() {
-    let Rpta = await LlenarComboXServicios("https://localhost:44342/api/Departamento")
+async function LlenarComboDepartamento(pais) {
+    let Rpta = await LlenarComboXServicios("https://localhost:44342/api/Departamento?pais=" + pais);
     for (i = 0; i < Rpta.length; i++) {
         $("#cboDepartamento").append('<option value=' + Rpta[i].DepartamentoId + '>' + Rpta[i].Nombre + '</option>');
     }
 }
-async function LlenarComboCiudad() {
-    let Rpta = await LlenarComboXServicios("https://localhost:44342/api/Ciudad")
+async function LlenarComboCiudad(departamento) {
+    let Rpta = await LlenarComboXServicios("https://localhost:44342/api/Ciudad?departamento=" + departamento)
     for (i = 0; i < Rpta.length; i++) {
         $("#cboCiudad").append('<option value=' + Rpta[i].CiudadId + '>' + Rpta[i].Nombre + '</option>');
     }
 }
-async function LlenarComboBarrio() {
-    let Rpta = await LlenarComboXServicios("https://localhost:44342/api/Barrio")
+async function LlenarComboBarrio(ciudad) {
+    let Rpta = await LlenarComboXServicios("https://localhost:44342/api/Barrio?ciudad=" + ciudad)
     for (i = 0; i < Rpta.length; i++) {
         $("#cboBarrio").append('<option value=' + Rpta[i].BarrioId + '>' + Rpta[i].Nombre + '</option>');
     }

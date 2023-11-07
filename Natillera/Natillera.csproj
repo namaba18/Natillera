@@ -124,6 +124,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Pages\Home.html" />
     <Content Include="Pages\Abonos.html" />
     <Content Include="Pages\Actividades.html" />
     <Content Include="Pages\Creditos.html" />
@@ -170,6 +171,7 @@
     <Content Include="Pages\Scripts\Abonos.js" />
     <Content Include="Pages\Scripts\Creditos.js" />
     <Content Include="Pages\Liquidacion.html" />
+    <Content Include="Pages\Scripts\Home.js" />
     <Content Include="Pages\Scripts\Liquidacion.js" />
     <Content Include="Pages\Scripts\Usuarios.js" />
     <Content Include="Pages\Usuarios.html" />
