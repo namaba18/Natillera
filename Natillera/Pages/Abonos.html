@@ -22,7 +22,7 @@
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">ADMINISTRACION DE PAGO DE PRESTAMOS</h3>
+                            <h3 class="card-title">ABONOS A PRESTAMOS</h3>
                         </div>
                         <form id="frmIncapacidades">
                             <div class="card-body">
@@ -34,75 +34,30 @@
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="txtNombre">NOMBRE</label>
-                                                    <input type="text" class="form-control" id="txtNombre" placeholder="Nombre del Usuario">
+                                                    <label for="txtFecha">FECHA</label>
+                                                    <input type="date" class="form-control" id="txtFecha">
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="txtApellido">APELLIDO</label>
-                                                    <input type="text" class="form-control" id="txtApellido" placeholder="Primer apellido del usuario">
+                                                    <label for="txtMonto">MONTO</label>
+                                                    <input type="number" class="form-control" id="txtMonto">
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="cboTipoDoc">TIPO DE DOCUMENTO</label>
-                                                    <select class="form-control" id="cboTipoDoc"></select>
+                                                    <label for="cboUsuario">USUARIO</label>
+                                                    <select class="form-control" id="cboUsuario"></select>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="txtDocumento">DOCUMENTO</label>
-                                                    <input type="text" class="form-control" id="txtDocumento" placeholder="Numero de documento del Usuario">
+                                                    <label for="cboPrestamo">PRESTAMO</label>
+                                                    <select class="form-control" id="cboPrestamo"></select>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="cboPais">PAIS</label>
-                                                    <select class="form-control" id="cboPais"></select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="cboDepartamento">DEPARTAMENTO</label>
-                                                    <select class="form-control" id="cboDepartamento"></select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="cboCiudad">CIUDAD</label>
-                                                    <select class="form-control" id="cboCiudad"></select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="cboBarrio">BARRIO</label>
-                                                    <select class="form-control" id="cboBarrio"></select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-5">
-                                                <div class="form-group">
-                                                    <label for="txtDireccion">DIRECCION</label>
-                                                    <input type="text" class="form-control" id="txtDireccion" placeholder="Dirección del Usuario">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <div class="form-group">
-                                                    <label for="cboTipoUsuario">TIPO DE USUARIO</label>
-                                                    <select class="form-control" id="cboTipoUsuario"></select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label for="cbActivo">ACTIVO</label>
-                                                    <input type="checkbox" id="cbActivo" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div>                                        
+                                        
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <br />
@@ -126,11 +81,10 @@
                                                 <table id="tblAbonos" class="table table-bordered table-striped" style="width:100%;">
                                                     <thead>
                                                         <tr>
-                                                            <th>Id</th>
-                                                            <th>Nombre</th>
-                                                            <th>Apellido</th>
-                                                            <th>Monto</th>
                                                             <th>Fecha</th>
+                                                            <th>Usuario</th>
+                                                            <th>Abono</th>
+                                                            <th>Prestamo</th>
                                                         </tr>
                                                     </thead>
                                                 </table>

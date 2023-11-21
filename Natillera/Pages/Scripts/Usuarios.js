@@ -47,6 +47,7 @@ async function LlenarComboTipoDocumento() {
 }
 
 async function LlenarComboPais() {
+    $("#cboPais").empty().append('<option value="0">Seleccione una opcion...</option>');
     let Rpta = await LlenarComboXServicios("https://localhost:44342/api/Pais")
     for (i = 0; i < Rpta.length; i++) {
         $("#cboPais").append('<option value=' + Rpta[i].PaisId + '>' + Rpta[i].Nombre + '</option>');
@@ -54,18 +55,21 @@ async function LlenarComboPais() {
 }
 
 async function LlenarComboDepartamento(pais) {
+    $("#cboDepartamento").empty().append('<option value="0">Seleccione una opcion...</option>');
     let Rpta = await LlenarComboXServicios("https://localhost:44342/api/Departamento?pais=" + pais);
     for (i = 0; i < Rpta.length; i++) {
         $("#cboDepartamento").append('<option value=' + Rpta[i].DepartamentoId + '>' + Rpta[i].Nombre + '</option>');
     }
 }
 async function LlenarComboCiudad(departamento) {
+    $("#cboCiudad").empty().append('<option value="0">Seleccione una opcion...</option>');
     let Rpta = await LlenarComboXServicios("https://localhost:44342/api/Ciudad?departamento=" + departamento)
     for (i = 0; i < Rpta.length; i++) {
         $("#cboCiudad").append('<option value=' + Rpta[i].CiudadId + '>' + Rpta[i].Nombre + '</option>');
     }
 }
 async function LlenarComboBarrio(ciudad) {
+    $("#cboBarrio").empty().append('<option value="0">Seleccione una opcion...</option>');
     let Rpta = await LlenarComboXServicios("https://localhost:44342/api/Barrio?ciudad=" + ciudad)
     for (i = 0; i < Rpta.length; i++) {
         $("#cboBarrio").append('<option value=' + Rpta[i].BarrioId + '>' + Rpta[i].Nombre + '</option>');
