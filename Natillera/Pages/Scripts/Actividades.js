@@ -18,7 +18,7 @@ async function LlenarComboTipoActividad() {
     let Rpta = await LlenarComboXServicios("https://localhost:44342/api/TipoActividad")
     $("#cboTipoActividad").empty().append('<option value="0">Seleccione una opcion...</option>');
     for (i = 0; i < Rpta.length; i++) {
-        $("#cboTipoActividad").append('<option value=' + Rpta[i].Id + '>' + Rpta[i].Descripcion + '</option>');
+        $("#cboTipoActividad").append('<option value=' + Rpta[i].TipoActividadId + '>' + Rpta[i].Descripcion + '</option>');
     }
 }
 

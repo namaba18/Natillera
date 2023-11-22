@@ -17,16 +17,7 @@ jQuery(function () {
         let usuarioId = document.getElementById("cboUsuario");
         LlenarComboPrestamos(usuarioId.value);
     });
-    $('#tblAbonos tbody').on('click', 'tr', function () {
-        if ($(this).hasClass('selected')) {
-            $(this).removeClass('selected');
-        } else {
-            oTabla.$('tr.selected').removeClass('selected');
-            $(this).addClass('selected');
-            EditarFila($(this).closest('tr'));
-        }
-    });
-
+    
     LlenarTablaAbonos();
     LlenarComboUsuarios();
 });
@@ -116,14 +107,5 @@ async function Consultar() {
     }
 }
 
-function EditarFila(DatosFila) {
-    $("#txtDocumento").val(DatosFila.find('td:eq(2)').text());
-    $("#txtNombre").val(DatosFila.find('td:eq(3)').text());
-    $("#txtPrimerApellido").val(DatosFila.find('td:eq(4)').text());
-    $("#txtSegundoApellido").val(DatosFila.find('td:eq(5)').text());
-    $("#txtDireccion").val(DatosFila.find('td:eq(6)').text());
-    $("#txtEmail").val(DatosFila.find('td:eq(7)').text());
-    var Fecha = DatosFila.find('td:eq(8)').text();
-    $("#txtFechaNacimiento").val(Fecha.split('T')[0]);
-}
+
 

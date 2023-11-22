@@ -104,24 +104,105 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-12">
                                                 <br />
                                                 <button type="button" id="btnInsertar" class="btn-block btn-lg btn-primary">INSERTAR</button>
                                             </div>
-                                            <div class="col-md-3">
-                                                <br />
+                                            <div class="col-md-4">
+                                                <button type="button" id="btnEditarTelefonos" class="btn-block btn-lg btn-primary" data-toggle="modal" data-target="#modTelefon">AGREGAR TELEFONO</button>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="modTelefon" tabindex="-1" role="dialog" aria-labelledby="modTelefonosLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="modTelefonosLabel">GESTIÓN DE TELÉFONOS</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="cboUsuario">Usuario</label>
+                                                                            <select type="text" class="form-control select2" id="cboUsuario" placeholder="Nombre Usuario"></select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group">
+                                                                            <label for="txtTelefonoId">Id</label>
+                                                                            <input type="text" class="form-control" id="txtTelefonoId" placeholder="Id teléfono" disabled>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5">
+                                                                        <div class="form-group">
+                                                                            <label for="cboTipoTel">Tipo teléfono</label>
+                                                                            <select id="cboTipoTel" class="form-control select2" style="width: 100%;">
+                                                                                <option selected="selected" value="0">Seleccione el tipo de teléfono</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-5">
+                                                                        <div class="form-group">
+                                                                            <label for="txtNumero">NÚMERO</label>
+                                                                            <input type="text" class="form-control" id="txtNumero" placeholder="Número de teléfono">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <div class="form-group">
+                                                                            <button id="bntInsertarTel" class="btn-block btn-lg btn-secondary">INSERTAR</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <div class="form-group">
+                                                                            <button id="btnActualizarTel" class="btn-block btn-lg btn-secondary">ACTUALIZAR</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <div class="form-group">
+                                                                            <button id="btnEliminarTel" class="btn-block btn-lg btn-secondary">ELIMINAR</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <div class="form-group">
+                                                                            <button id="btnCerrarModal" class="btn-block btn-lg btn-secondary" data-dismiss="modal">CERRAR</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <table id="tblTelefonos" class="table table-bordered table-striped" width="100%">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Id</th>
+                                                                                    <th>Tipo Teléfono</th>
+                                                                                    <th>Número</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <div id="dvMensajeTel" class=""></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-4">
                                                 <button type="button" id="btnActualizar" class="btn-block btn-lg btn-primary">ACTUALIZAR</button>
                                             </div>
-                                            <div class="col-md-3">
-                                                <br />
+                                            <div class="col-md-4">
                                                 <button type="button" id="btnEliminar" class="btn-block btn-lg btn-primary">ELIMINAR</button>
                                             </div>
-                                            <div class="col-md-3">
-                                                <br />
-                                                <button type="button" id="btnConsultar" class="btn-block btn-lg btn-primary">CONSULTAR</button>
-                                            </div>
                                         </div>
-                                        <div class="row mt-2">
+                                        <div class="row mt-3">
                                             <div class="col-md-12">
                                                 <table id="tblUsuarios" class="table table-bordered table-striped" style="width:100%;">
                                                     <thead>
@@ -133,6 +214,7 @@
                                                             <th>Documento</th>
                                                             <th>Tipo de Usuario</th>
                                                             <th>Activo</th>
+                                                            <th>Telefonos</th>
                                                         </tr>
                                                     </thead>
                                                 </table>
